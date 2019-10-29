@@ -29,7 +29,7 @@ request.onload = function() {
 
         var url = "https://github.com/"
         const a = document.createElement('a');
-        a.textContent = repo.full_name;
+        a.textContent = repo.name;
         a.href = url + repo.full_name;
         a.className = 'link';
 
