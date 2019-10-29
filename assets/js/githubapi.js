@@ -27,14 +27,14 @@ request.onload = function() {
         //h1.textContent = repo.name
 
 
-        var url = "https://github.com/linus-skola/"
+        var url = "https://github.com/"
         const a = document.createElement('a');
-        a.textContent = repo.name;
-        a.href = url + repo.name;
+        a.textContent = repo.full_name;
+        a.href = url + repo.full_name;
         a.className = 'link';
 
         const bga = document.createElement('a');
-        bga.href = url + repo.name;
+        bga.href = url + repo.full_name;
         bga.className = 'link primary';
 
         //const href = document.createElement('a')
