@@ -1,2 +1,7 @@
 # ignore .bat
 *.bat
+
+# ignore useless html
+generic.html
+landing.html
+template.html
