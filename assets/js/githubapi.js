@@ -42,7 +42,7 @@ request.onload = function() {
         //href.setAttribute('class', 'link')
   
         const p = document.createElement('p')
-        repo.description = repo.description.substring(0, 300)
+        repo.description = repo.description.substring(0, 300) // Limit to 300 chars
         p.textContent = repo.description
   
         app.appendChild(article)
@@ -55,8 +55,8 @@ request.onload = function() {
         header.appendChild(p)
     })
   } else {
-    const errorMessage = document.createElement('marquee')
-    errorMessage.textContent = `Gah, it's not working!`
+    const errorMessage = document.createElement('h3')
+    errorMessage.textContent = `Error loading repositories :(`
     app.appendChild(errorMessage)
   }
 }
