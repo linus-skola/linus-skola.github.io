@@ -5,5 +5,5 @@
   <h3 align="center">
   <a href="https://linus-skola.github.io/">Visit webiste</a>
   </h3>
-  <img src="https://github.com/linus-skola/linus-skola.github.io/blob/master/images/preview.PNG?raw=true" width="300">
+  <img src="https://github.com/linus-skola/linus-skola.github.io/blob/master/images/preview.PNG?raw=true" width="1000">
 </p>
