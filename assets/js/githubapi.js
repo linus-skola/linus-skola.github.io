@@ -26,7 +26,6 @@ request.onload = function() {
         const h3 = document.createElement('h3')
         //h1.textContent = repo.name
 
-
         var url = "https://github.com/"
         const a = document.createElement('a');
         a.textContent = repo.name;
@@ -42,9 +41,14 @@ request.onload = function() {
         //href.setAttribute('class', 'link')
   
         const p = document.createElement('p')
-        repo.description = repo.description.substring(0, 300) // Limit to 300 chars
-        p.textContent = repo.description
-  
+        if(repo.description == null){
+          p.textContent = "No description"
+        }
+        else{
+          repo.description = repo.description.substring(0, 300) // Limit to 300 chars
+          p.textContent = repo.description
+        }
+
         app.appendChild(article)
         article.appendChild(span)
         article.appendChild(header)
