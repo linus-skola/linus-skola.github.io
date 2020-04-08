@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+
+
+body {
+    font-family: Source Sans Pro;
+}
+
+.Practise2 {
+
+}
+
+.Practise3 {
+    background-color: #C1EABB;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.MyProjects {
+    background: linear-gradient(to bottom, #232526 0%, #414345 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.NumberList {
+    color: grey;
+}
+
+.PinkBg {
+    background-color: rgb(255, 118, 182);
+}
+
+.CenterAlign {
+    text-align: center;
+}
+
+.RightAlign {
+    text-align: right;
+}
+
+.GreenBar {
+    height: 2em;
+    background-color: lightgreen;
+    margin-bottom: -1.5em;
+}
+
+.TableCaption {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+table {
+  border: 3px solid black;
+  background-color: rgb(221, 231, 201);
+  width: 100%;
+}
+
+th {
+    border: 3px dashed saddlebrown;
+    background-color: rgb(251, 228, 123);
+}
+
+td {
+    border: 2px dashed grey;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.col-50 {
+    width: 50%;
+}
+
+.title {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    padding-top: 5em;
+}
+
