@@ -2,6 +2,6 @@
 *.bat
 
 # ignore useless html
-generic.html
-landing.html
-template.html
+old/generic.html
+old/landing.html
+old/template.html
