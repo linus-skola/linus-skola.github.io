@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: Source Sans Pro;
@@ -106,12 +109,13 @@ a:hover {
 
 a:focus { 
     text-decoration: none; 
-    color:yellow; 
+    color: white; 
 }
 
 a:active { 
     text-decoration: none; 
-    color:black 
+    color: #f5f5f5; 
+
 }
 
 .div1 {
@@ -248,11 +252,12 @@ span {
     background-color: transparent; /* Green */
     border: 2px solid #4CAF50;
     color: white;
-    padding: 15px 32px;
+    padding: 1em 1.5em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 0.6em;
+    font-weight: 600;
 }
 
 .contactBtn:hover {
@@ -275,6 +280,102 @@ span {
 
 .lastSpan {
     display: inline;
+}
+
+.contactContainer {
+    margin-bottom: 10em;
+}
+.contact {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1em;
+    margin-left: 10em;
+    margin-right: 8em;
+    width: 40em;
+    height: 33.5em;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.contact h3 {
+    color: #1d1d1d;
+    font-size: 2em;
+    text-align: center;
+}
+
+.sendBtn {
+    background-color: transparent; /* Green */
+    border: 2px solid grey;
+    color: grey;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    font-size: 16px;
+}
+
+.sendBtn:hover {
+    transition: 0.3s;
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.contactForm {
+    font-family: Source Sans Pro;
+    font-size: 1em;
+}
+.contactForm label {
+    color: #1d1d1d;
+    font-weight: 600;
+}
+
+.contactForm input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+.contactForm textarea {
+    font-family: Source Sans Pro;
+    font-size: 1em;
+}
+
+.contactText {
+    display: inline-block;
+    position: absolute;
+    margin-left: 8em;
+    margin-right: 10em;
+}
+
+.contactText h2{
+    color: white;
+    font-size: 4em;
+    margin: 0em;
+}
+
+.contactText h4{
+    font-size: 2em;
+    margin: 0.5em 0em;
+}
+
+.contactText img {
+    filter: invert(1);
+    transform: rotate(40deg);
+    position: absolute;
+    right: 20em;
+    top: 6em;
+    width: 10em;
+}
+
+.spacer {
+    height: 15em;
 }
 
 @-webkit-keyframes slide-right {
