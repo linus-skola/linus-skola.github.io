@@ -7,6 +7,8 @@ html {
 body {
     font-family: Source Sans Pro;
     font-size: 1em;
+    margin: 0px;
+    overflow-x: hidden;
 }
 
 .Practise2 {
@@ -79,18 +81,30 @@ td {
 }
 
 .header {
-    border: 0;
-    display: inline-block;
-    font-size: 0.8em;
-    height: inherit;
-    line-height: inherit;
-    padding: 0 1.5em;
+    font-size: 1em;
+    margin: 1em;
 }
 
-.description {
-    font-size: 0.2em;
+.header div {
     color: white;
+    font-size: 2em;
+}
+
+.icon-bar {
     text-align: center;
+    color: #4CAF50;
+}
+  
+.icon-bar a {
+    padding: 12px 0;
+    color: #4CAF50;
+    font-size: 36px;
+    margin: 1em;
+    text-decoration: none;
+}
+
+.icon-bar strong {
+    display: none;
 }
 
 a {
@@ -184,38 +198,6 @@ h4 {
     letter-spacing: 3px;
 }
 
-.boxes {
-    margin: auto;
-    width: 60%;
-    border: 3px solid #73AD21;
-    padding: 10px;
-    text-align: center;
-}
-
-.left-col {
-    display: inline-block;
-    margin-left: auto;
-    margin-right: 2em;
-    text-align: center;
-}
-
-.right-col {
-    display: inline-block;
-    margin-left: 2em;
-    margin-right: auto;
-    text-align: center;
-}
-
-.box {
-    background-color: greenyellow;
-    width: 20em;
-    height: 10em;
-    line-height: 10em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: 1em;
-}
-
 .title {
     font-size: 2em;
     color: white;
@@ -224,6 +206,9 @@ h4 {
 
 }
 
+.container {
+    margin-bottom: 15em;
+}
 span {
     font-size: 2em;
     font-weight: bold;
@@ -267,7 +252,6 @@ span {
 }
 
 .slide-right {
-    width: 95%;
 	-webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -345,6 +329,9 @@ span {
 .contactForm textarea {
     font-family: Source Sans Pro;
     font-size: 1em;
+    max-height: 20em;
+    min-height: 5em;
+    height: 13em;
 }
 
 .contactText {
@@ -372,10 +359,6 @@ span {
     right: 20em;
     top: 6em;
     width: 10em;
-}
-
-.spacer {
-    height: 15em;
 }
 
 @-webkit-keyframes slide-right {

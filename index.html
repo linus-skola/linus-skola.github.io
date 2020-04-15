@@ -13,6 +13,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -24,28 +25,37 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="header">
-        <div class="logo">
-            <h2><a href="https://linus-skola.github.io">LINUS-SKOLA.GITHUB.IO</a></h2>
+        <div class="icon-bar">
+            <a href="#"><i class="fa fa-code"></i><strong>Hej</strong></a>
+            <a href="#"><i class="fa fa-envelope"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
         </div>
     </div>
-    <div class="slide-right">
-        <div class="title">
-            <h1>
-                <span>Hi,</span>
-                <span>I'm Linus,</span>
-                <span class="netText">.NET </span><span class="lastSpan">student.</span>
-            </h1>
-            <h4>Front-End Developer / Web Developer</h4>
-            <div>
-                <a href="#Contact" class="contactBtn">Say hello!</a>
+    <div class="container">
+        <div class="slide-right">
+            <div class="title">
+                <h1>
+                    <span>Hi,</span>
+                    <span>I'm Linus,</span>
+                    <span class="netText">.NET </span><span class="lastSpan">student.</span>
+                </h1>
+                <h4>Front-End Developer / Web Developer</h4>
+                <div>
+                    <a href="#Contact" class="contactBtn">Say hello!</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="potraitimage">
-        <img src="assets/image00002.png" alt="Error">
+        <div class="potraitimage">
+            <img src="assets/image00002.png" alt="Error">
+        </div>
     </div>
 
-    <div class="spacer"></div>
+    <div class="container">
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/web-design-portfolio-examples-xavier-cusso.gif?v=1556719324"
+                alt="" style="width: 119em;">
+        </div>
+    </div>
     <div class="contactContainer" id="Contact">
         <div class="contact">
             <div>
@@ -54,26 +64,27 @@
             <div class="contactForm">
                 <form method="POST" action="https://formspree.io/mpzjnqpq">
                     <label for="name">First Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your name...">
-        
+                    <input type="text" id="name" name="name" placeholder="Your name..." required>
+
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="_replyto" placeholder="Your email...">
-    
+                    <input type="text" id="email" name="_replyto" placeholder="Your email..." required>
+
                     <label for="subject">Message</label>
-                    <textarea id="subject" name="message" placeholder="Write me something funny..." style="height:200px"></textarea>
-    
+                    <textarea id="subject" name="message" placeholder="Write me something funny..."
+                        style="max-height:200px" required></textarea>
+
                     <button class="sendBtn">Send</button>
-                  </form>
+                </form>
             </div>
         </div>
         <div class="contactText">
             <h2>Any questions?</h2>
-            <h4>Tell me right away!</h4>
+            <h4>Ask me right away!</h4>
             <img src="assets/pngbarn.png" alt="error">
         </div>
     </div>
-    
-    
+
+
 </body>
 
 </html>
