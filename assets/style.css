@@ -31,6 +31,23 @@ body {
     background-attachment: fixed;
 }
 
+.fullscreen-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 .NumberList {
     color: grey;
 }
@@ -359,6 +376,13 @@ span {
     right: 20em;
     top: 6em;
     width: 10em;
+    transition: 0.5s;
+}
+
+.contactText img:hover {
+    transform: rotate(45deg);
+    width: 11em;
+    transition: 0.5s;
 }
 
 @-webkit-keyframes slide-right {
