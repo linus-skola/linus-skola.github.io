@@ -1,0 +1,60 @@
+div {
+	border: 1px solid darkgray;
+	padding: 4px;
+}
+.flex-container {
+	background-color: beige;
+	display: flex;
+	flex-direction: row;
+}
+/* :first-child */
+.uppgift1 > :nth-child(1) {
+	flex-grow: 2;
+}
+.uppgift1 > div {
+	flex-grow: 1;
+}
+
+.uppgift2 > div {
+	flex-grow: 1;
+}
+.uppgift2 > :nth-child(2) {
+	flex-grow: 2;
+}
+
+.uppgift3 {
+/* 	width: 30em; */
+}
+.uppgift3 > div {
+	flex-basis: 15em;
+}
+.uppgift3 > :first-child {
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+.uppgift3 > :last-child {
+	flex-shrink: 1;
+}
+
+
+.center1 {
+    margin-top: 2em;
+}
+
+.center1 > div {
+    width: 15em;
+    margin: auto;
+}
+
+.center2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.center2 > div {
+    flex: 1 1 auto;
+}
+
+.center2 > div:nth-child(2) {
+    flex: 0 0 15em;
+}
