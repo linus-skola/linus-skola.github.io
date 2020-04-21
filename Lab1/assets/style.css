@@ -143,6 +143,11 @@ body {
     height: 5em;
 }
 
+@media only screen and (min-device-width: 480px) {
+    body {
+        background-color: black;
+    }
+}
 
 @media only screen and (max-width: 1400px) {
     .cards {
@@ -168,3 +173,4 @@ body {
         text-align: center;
     }
 }
+
