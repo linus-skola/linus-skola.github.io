@@ -107,7 +107,8 @@ body {
 }
 
 .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: auto;
     padding: 0em 10em;
 }
@@ -143,17 +144,27 @@ body {
 }
 
 
-
-
-@media screen and (max-width: 1400px) {
+@media only screen and (max-width: 1400px) {
     .cards {
-        display: block;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-@media screen and (max-width: 245px) {
+@media only screen and (max-width: 1000px) {
     .cards {
-        background-color: black;
-        padding: 2em;
+        grid-template-columns: 1fr;
+        padding: 0em 0em;
+    }
+}
+
+@media only screen and (max-width: 875px) {
+    .header {
+        display: block;
+    }
+
+    .header > div {
+        width: auto;
+        padding: 0.2em 0.5em;
+        text-align: center;
     }
 }
