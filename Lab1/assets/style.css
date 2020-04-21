@@ -60,7 +60,6 @@ body {
 
 .title-container {
     background-image: url("bg.png");
-    background-size: cover;
     background-position: center;
     margin-bottom: 3em;
 }
@@ -141,12 +140,6 @@ body {
     background-color: #1d1c66;
     background-color: #87cefa;
     height: 5em;
-}
-
-@media only screen and (min-device-width: 480px) {
-    body {
-        background-color: black;
-    }
 }
 
 @media only screen and (max-width: 1400px) {
