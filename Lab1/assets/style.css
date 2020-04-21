@@ -195,5 +195,9 @@ body {
         padding: 0.2em 0.5em;
         text-align: center;
     }
+
+    .title-container {
+        font-size: 0.8em;
+    }
 }
 
