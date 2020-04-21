@@ -38,6 +38,14 @@ body {
     color: #1d1d1d;
 }
 
+.header div > a:hover > span {
+    font-weight: 600;
+}
+
+.header div > a:hover > span:nth-child(1) {
+    font-weight: 500;
+}
+
 .nav {
     margin: auto;
     text-align: center;
@@ -49,11 +57,11 @@ body {
     padding: 0em 1em;
     font-weight: 600;
     font-size: 0.7em;
+    transition: border .2s;
 }
 
 .nav > a:hover {
-    border-radius: 1em;
-    color: #797979;
+    border-bottom: 2px solid #87cefa;
 }
 
 /* END OF HEADER */
@@ -71,8 +79,20 @@ body {
 .title > span {
     font-size: 2em;
     font-weight: 600;
-    display: flex;
     color: #1d1d1d;
+    display: block;
+}
+
+.title > span:nth-child(2) {
+    font-size: 3em;
+    display: inline;
+
+}
+
+.title > span:nth-child(3) {
+    font-size: 2em;
+    display: inline;
+
 }
 
 .title > h2 {
@@ -107,7 +127,9 @@ body {
 
 .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    display: flex;
+    flex-wrap: wrap;
     margin: auto;
     padding: 0em 10em;
 }
@@ -126,6 +148,7 @@ body {
     margin: auto;
     padding: 1em 1em;
     width: 6em;
+    height: 6em;
 }
 .card > span {
     font-size: 1.5em;
@@ -133,6 +156,7 @@ body {
 }
 
 .card > p {
+    font-size: 1.3em;
     padding-bottom: 1em;
 }
 
@@ -142,6 +166,11 @@ body {
     height: 5em;
 }
 
+.underline {
+    border-bottom: 2px solid #87cefa;
+
+}
+/*
 @media only screen and (max-width: 1400px) {
     .cards {
         grid-template-columns: 1fr 1fr;
@@ -154,6 +183,7 @@ body {
         padding: 0em 0em;
     }
 }
+*/
 
 @media only screen and (max-width: 875px) {
     .header {
