@@ -187,7 +187,7 @@ body {
 }
 
 .products-container {
-    border-top: 1px solid lightgray;
+    background-color: #efefef;
     padding: 2em 8em;
 }
 
@@ -258,11 +258,47 @@ body {
     padding-left: 0.8em;
 }
 
+.about-container {
+}
+.about-container > .img-container {
+    background-image: url("bg.png");
+    background-position: center;
+    margin-bottom: 2em;
+}
+
+.img-container > div {
+    font-size: 2em;
+    margin: auto;
+    padding: 4em 5em;
+}
+
+.about-container h1, h3{
+    margin: 0em 0em;
+}
 
 
+.about {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.about-text {
+    padding: 1em 10em;
+    display: flex;
+}
+
+.about-text > div {
+    font-size: 1.3em;
+    margin: 0em 1em;
+    display: inline;
+}
 
 
-
+.about-text :nth-child(2) {
+    display: inline-flex;
+    margin: auto;
+}
 
 
 
