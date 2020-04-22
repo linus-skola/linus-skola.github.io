@@ -21,11 +21,12 @@ body {
 
 .header > div {
     width: 50%;
-    padding: 0.5em;
+    padding: 0.5em 0em;
 }
 
 .header div > a {
     text-decoration: none;
+    padding: 0em 1em;
 }
 
 .header div > a > span {
@@ -49,6 +50,7 @@ body {
 .nav {
     margin: auto;
     text-align: center;
+    font-size: 1em;
 }
 
 .nav > a {
@@ -63,6 +65,19 @@ body {
 .nav > a:hover {
     border-bottom: 2px solid #87cefa;
 }
+
+.fa-shopping-cart:before {
+    padding-left: 1em;
+    font-size: 0.8em;
+}
+
+.nav > span {
+    font-size: 0.7em;
+    font-weight: 600;
+    margin: 0.5em;
+    cursor: pointer;
+}
+
 
 /* END OF HEADER */
 
@@ -170,6 +185,90 @@ body {
     border-bottom: 2px solid #87cefa;
 
 }
+
+.products-container {
+    border-top: 1px solid lightgray;
+    padding: 2em 8em;
+}
+
+.products-container > h2 {
+    text-align: center;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.product-card {
+    border: 1px solid lightgrey;
+    background-color: white;
+    margin: 0em auto;
+    width: 20em;
+    border-radius: 0.3em;
+    border-top: 4px solid #87cefa;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.product-card > img {
+    display: block;
+    margin: auto;
+    padding: 1em 1em;
+    width: 6em;
+    height: 6em;
+}
+.product-card > span {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.product-card > p {
+    font-size: 1.3em;
+    padding-bottom: 1em;
+}
+
+.addtocart-btn {
+    padding: 2em;
+}
+.addtocart-btn > a {
+    background-color: #87cefa;
+    border-radius: 0.5em;
+    padding: 1em 2em;
+    margin: 1em 1em;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.addtocart-btn > a:hover {
+    background-color: #71c7fd;
+}
+
+.product-card-list {
+    text-align: left;
+    padding: 0em 4em;
+}
+
+.product-card-list > ul {
+    list-style-type: '\2713';
+}
+
+.product-card-list > ul > li {
+    padding-left: 0.8em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 @media only screen and (max-width: 1400px) {
     .cards {
@@ -185,19 +284,43 @@ body {
 }
 */
 
-@media only screen and (max-width: 875px) {
+@media screen and (max-width: 1250px) {
+    .products-container {
+        padding: 4em 0em;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 1010px) {
     .header {
         display: block;
     }
 
     .header > div {
         width: auto;
-        padding: 0.2em 0.5em;
+        padding: 0.2em 0em;
         text-align: center;
     }
+}
 
+@media screen and (max-width: 875px) {
     .title-container {
         font-size: 0.8em;
     }
 }
 
+@media screen and (max-width: 700px) {
+    .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .nav > i {
+        display: inline;
+    }
+    }
+}
