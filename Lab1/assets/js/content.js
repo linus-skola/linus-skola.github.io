@@ -3,6 +3,8 @@ window.addEventListener('load', () => {
 
     cartcount = sessionStorage.getItem('cart');
 
+    console.log(cartcount);
+    
     var cart = document.getElementById('cartcount');
     cart.textContent = cartcount;
 
