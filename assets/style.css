@@ -241,12 +241,25 @@ span {
 }
 
 .potraitimage img {
-    display:block; /*remove inline-block spaces*/
-    width:23em; /*make image streatch*/
-    border-radius: 50%;
-    filter: grayscale(100%);
+  display:block; /*remove inline-block spaces*/
+  width:23em; /*make image streatch*/
+  border-radius: 50%;
+  filter: grayscale(100%);
 	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.potraitimage img:hover {
+  width: 25em;
+  transition: 0.4s;
+}
+
+.videotoggle {
+  font-size: 0.6em;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  cursor: pointer;
 }
 
 .contactBtn {

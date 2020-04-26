@@ -18,6 +18,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+    <script type="text/javascript" src="assets/content.js"></script>
 </head>
 
 <body class="MyProjects">
@@ -32,7 +33,7 @@
         </div>
     </div>
 
-    <div class="fullscreen-bg">
+    <div class="fullscreen-bg" id="bgvideo">
         <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
             <source src="https://forverkliga.se/JavaScript/education/Pexels%20Videos%202324293.mp4" type="video/mp4">
         </video>
@@ -53,6 +54,11 @@
         </div>
         <div class="potraitimage">
             <img src="assets/image00002.png" alt="Error">
+        </div>
+
+        <div class="videotoggle" id="bgtoggle">
+            <span><i class="fa fa-power-off"></i> Toggle background</span>
+                
         </div>
     </div>
 
