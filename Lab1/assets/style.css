@@ -374,6 +374,14 @@ body {
         padding: 0.2em 0em;
         text-align: center;
     }
+
+    .title-container {
+        font-size: 0.8em;
+    }
+
+    .cards {
+        padding: 0em 5em;
+    }
     
     .footer {
         padding: 3em 2em;
@@ -381,10 +389,6 @@ body {
 }
 
 @media screen and (max-width: 875px) {
-    .title-container {
-        font-size: 0.8em;
-    }
-
     .about-text {
         padding: 0em 0em;
     }
@@ -406,6 +410,5 @@ body {
 @media screen and (max-width: 520px) {
     .nav > i {
         display: inline;
-    }
     }
 }
