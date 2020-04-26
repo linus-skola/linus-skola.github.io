@@ -4,12 +4,12 @@ window.addEventListener('load', () => {
     cartcount = sessionStorage.getItem('cart');
 
     console.log(cartcount);
-    
+
     var cart = document.getElementById('cartcount');
     cart.textContent = cartcount;
 
-    var adds = document.getElementsByClassName("addtocart-btn");
-
+    var adds = document.getElementsByName('add');
+    
     $(adds).on("click", function () {
         cartcount++;
         var cart = document.getElementById('cartcount');
