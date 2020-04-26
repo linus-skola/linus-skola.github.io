@@ -72,7 +72,7 @@ body {
 }
 
 .nav > div {
-    display: inline;
+    display: inline-block;
     font-size: 0.8em;
     font-weight: 600;
     cursor: pointer;
@@ -142,8 +142,6 @@ body {
 }
 
 .cards {
-    display: grid;
-    /*grid-template-columns: 1fr 1fr 1fr;*/
     display: flex;
     flex-wrap: wrap;
     margin: auto;
