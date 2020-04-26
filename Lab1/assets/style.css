@@ -262,13 +262,12 @@ body {
 }
 
 .addtocart-btn {
-    padding: 2em;
+    padding: 3em 0em;
 }
 .addtocart-btn > a {
     background-color: #87cefa;
     border-radius: 0.5em;
     padding: 1em 2em;
-    margin: 1em 1em;
     color: white;
     font-weight: 600;
     text-decoration: none;
@@ -376,6 +375,10 @@ body {
     }
 
     .title-container {
+        font-size: 0.8em;
+    }
+
+    .img-container {
         font-size: 0.8em;
     }
 
