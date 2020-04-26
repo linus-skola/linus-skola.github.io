@@ -56,7 +56,7 @@ body {
 .nav > a {
     color: #1d1d1d;
     text-decoration: none;
-    padding: 0em 1em;
+    margin: 0em 1em;
     font-weight: 600;
     font-size: 0.7em;
     transition: border .2s;
@@ -67,15 +67,16 @@ body {
 }
 
 .fa-shopping-cart:before {
-    padding-left: 1em;
     font-size: 0.8em;
+    margin-right: 0.4em;
 }
 
-.nav > span {
-    font-size: 0.7em;
+.nav > div {
+    display: inline;
+    font-size: 0.8em;
     font-weight: 600;
-    margin: 0.5em;
     cursor: pointer;
+    margin: 0em 1em;
 }
 
 
