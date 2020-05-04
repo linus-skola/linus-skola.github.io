@@ -83,6 +83,12 @@ body {
     font-size: 0.8em;
     margin-left: 0.5em;
 }
+
+.list-title:hover {
+    color: #e7e7e7;
+    transition: 0.3s;
+}
+
 .list {
     overflow: auto;
     max-height: 19em;
