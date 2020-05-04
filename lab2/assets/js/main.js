@@ -1,10 +1,26 @@
+//PopulateDatalists()
+
+const starWarsData = []
+
 $.ajax({
     url: 'https://swapi.dev/api/people/',
     contentType: 'application/json',
     dataType: 'json',
     success: function (response) {
+        populateCharactersList(response.results)
+        //allCharacters(response.results)
+    },
+    error: function (response) {
         console.log(response)
-        PopulateDatalist(response.results)
+    }
+})
+
+$.ajax({
+    url: 'https://swapi.dev/api/planets/',
+    contentType: 'application/json',
+    dataType: 'json',
+    success: function (response) {
+        populatePlanetsList(response.results)
     },
     error: function (response) {
         console.log(response)
@@ -13,16 +29,39 @@ $.ajax({
 
 
 const addBtn = document.querySelector('.action-btn')
+addBtn.addEventListener('click', addCharacter)
 
-addBtn.addEventListener('click', event => {
-    const inputValue = document.querySelector('.datalistInput')
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 13) {
+        addCharacter()
+    }
+})
 
-    if (inputValue.value) {
-        const characterList = document.querySelector('.character-list')
+const listTitles = document.querySelectorAll('.list-title')
+for(let div of listTitles){
+    div.addEventListener('click', toggleList)
+}
+
+function addCharacter() {
+    const characterValue = document.querySelector('.character-input')
+    const planetValue = document.querySelector('.planet-input')
+
+
+    if (characterValue.value) {
+        const activeList = document.querySelector('.active')
+        const characterList = activeList.querySelector('.character-list')
 
         const listItem = document.createElement('li')
-        listItem.innerText = inputValue.value
 
+        //Character name
+        const p = document.createElement('p')
+        p.innerText = characterValue.value
+
+        p.addEventListener('click', () => {
+            editCharacter(p.parentElement)
+        })
+
+        // ICON
         const icon = document.createElement('i')
         icon.className = 'fas fa-times-circle'
 
@@ -30,31 +69,59 @@ addBtn.addEventListener('click', event => {
             icon.parentElement.remove()
         })
 
-        console.log(inputValue)
-        const span = document.createElement('span')
-        //span.innerText = inputValue
 
+        //Planet
+        const span = document.createElement('span')
+        span.innerText = planetValue.value
+
+        span.addEventListener('click', () => {
+            editCharacter(span.parentElement)
+        })
+
+        listItem.append(p)
         listItem.append(icon)
+        listItem.append(span)
 
         characterList.append(listItem)
 
-        inputValue.value = ''
+        characterValue.value = ''
+        planetValue.value = ''
     }
-})
+}
 
-
-function PopulateDatalist(data) {
-    console.log(data)
-    const dataList = document.querySelector('#peopleList')
-
-    if (dataList) {
-        for (const element of data) {
-            const option = document.createElement('option')
-            option.value = element.name
-            dataList.append(option)
-        }
+function toggleList() {
+    const listSections = document.querySelectorAll('.list-container')
+    for(let div of listSections) {
+        div.classList.toggle('active')
     }
-    else {
-        console.log('dataList not found')
+    
+}
+
+function editCharacter(data) {
+    const characterValue = document.querySelector('.character-input')
+    const planetValue = document.querySelector('.planet-input')
+}
+
+function populateCharactersList(data) {
+    const characterList = document.querySelector('.character-datalist')
+
+    for (const element of data) {
+        const character = document.createElement('option')
+
+        character.value = element.name
+
+        characterList.append(character)
+    }
+}
+
+function populatePlanetsList(data) {
+    const planetsList = document.querySelector('.planets-list')
+
+    for (const element of data) {
+        const planet = document.createElement('option')
+
+        planet.value = element.name
+
+        planetsList.append(planet)
     }
 }
