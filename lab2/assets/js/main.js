@@ -28,8 +28,9 @@ $.ajax({
 })
 
 
-const addBtn = document.querySelector('.action-btn')
+const addBtn = document.querySelector('.add-btn')
 addBtn.addEventListener('click', addCharacter)
+
 
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == 13) {
@@ -42,11 +43,10 @@ for(let div of listTitles){
     div.addEventListener('click', toggleList)
 }
 
+const characterValue = document.querySelector('.character-input')
+const planetValue = document.querySelector('.planet-input')
+
 function addCharacter() {
-    const characterValue = document.querySelector('.character-input')
-    const planetValue = document.querySelector('.planet-input')
-
-
     if (characterValue.value) {
         const activeList = document.querySelector('.active')
         const characterList = activeList.querySelector('.character-list')
@@ -58,7 +58,7 @@ function addCharacter() {
         p.innerText = characterValue.value
 
         p.addEventListener('click', () => {
-            editCharacter(p.parentElement)
+            setInputValues(p.parentElement)
         })
 
         // ICON
@@ -75,7 +75,7 @@ function addCharacter() {
         span.innerText = planetValue.value
 
         span.addEventListener('click', () => {
-            editCharacter(span.parentElement)
+            setInputValues(span.parentElement)
         })
 
         listItem.append(p)
@@ -97,11 +97,44 @@ function toggleList() {
     
 }
 
-function editCharacter(data) {
-    const characterValue = document.querySelector('.character-input')
-    const planetValue = document.querySelector('.planet-input')
+let c = null
+const changeBtn = document.querySelector('.change-btn')
+changeBtn.addEventListener('click', () => {
+    editCharacter(c)
+})
+
+function setInputValues(data) {
+    c = data
+    let name = data.querySelector('p')
+    let planet = data.querySelector('span')
+
+    characterValue.value = name.innerText
+    planetValue.value = planet.innerText
+
+    toggleBtn()
 }
 
+function editCharacter(data) {
+    let name = data.querySelector('p')
+    let planet = data.querySelector('span')
+
+    name.innerText = characterValue.value
+    planet.innerText = planetValue.value
+    
+    characterValue.value = ''
+    planetValue.value = ''
+
+    toggleBtn()
+}
+
+function toggleBtn() {
+    const actionBtns = document.querySelectorAll('.action-btn')
+
+    console.log('toggle')
+    for(let btn of actionBtns) {
+        btn.classList.toggle('active-btn')
+    }
+}
 function populateCharactersList(data) {
     const characterList = document.querySelector('.character-datalist')
 

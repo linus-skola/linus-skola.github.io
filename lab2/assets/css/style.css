@@ -44,11 +44,16 @@ body {
     font-weight: 500;
     text-decoration: none;
     color: white;
+    display: none;
 }
 
 .action-btn:hover {
     background-color: rgb(0, 126, 168);
     transition: 0.3s;
+}
+
+.active-btn {
+    display: inline;
 }
 
 .list-container {
@@ -60,6 +65,7 @@ body {
 .list-container > div:first-child {
     border-bottom: 2px solid #cecece;
 }
+
 .list-container > div > span {
     font-weight: 700;
     font-size: 1.5em;
