@@ -213,10 +213,11 @@ function populatePlanetDatalist(data) {
 async function createCharacterObjAndPopulate(data) {
     allObj = []
 
+
     for (const character of data) {
         let obj = {
             name: character.name,
-            homeworld: await fetchPlanetData(character.homeworld)
+            homeworld: await fetchPlanetData(character.homeworld.replace('http', 'https'))
         }
         allObj.push(obj)
     }
