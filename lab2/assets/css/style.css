@@ -3,11 +3,14 @@ body {
     background-image: url('../star-wars-backgrounds-14.jpg');
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
+    margin: 0;
+    width: 100%;
 }
 
 .container {
+    display: inline-block;
     margin: auto;
-    padding: 10em 15em;
+    padding: 5em 0em;
 }
 
 .form input {
@@ -24,11 +27,12 @@ body {
 }
 
 .inner-container {
-    display: inline-block;
+    margin: 0em 15em;
 }
 
-.inner-container > h1 {
+.inner-container h1 {
     margin-top: 0;
+    font-size: 3em;
 }
 
 .btn-container {
@@ -60,6 +64,10 @@ body {
     display: none;
     font-size: 1.5em;
     margin-bottom: 0;
+    position: absolute;
+    top: 4em;
+    right: 20em;
+    width: 20em;
 }
 
 .list-container > div:first-child {
@@ -97,7 +105,7 @@ body {
 
 .list {
     overflow: auto;
-    max-height: 19em;
+    max-height: 30em;
 }
 li {
     margin: 0.5em 0em;
@@ -106,6 +114,7 @@ li {
 li > p {
     display: inline;
     cursor: pointer;
+    word-wrap: break-word;
 }
 li > i {
     color: red;
@@ -127,6 +136,14 @@ li > p:nth-child(3) {
     margin: 0;
 }
 
+#swList li > p {
+    cursor: auto;
+}
+
+#swList li > span {
+    cursor: auto;
+}
+
 ::-webkit-scrollbar {
     width: 0.2em;
 }
@@ -143,3 +160,21 @@ li > p:nth-child(3) {
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
+.loading {
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    margin-right: 0.5em;
+  }
+
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

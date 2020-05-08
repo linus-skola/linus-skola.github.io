@@ -7,7 +7,7 @@ $.ajax({
     contentType: 'application/json',
     dataType: 'json',
     success: function (response) {
-        populateCharactersList(response.results)
+        //populateCharactersList(response.results)
         //allCharacters(response.results)
     },
     error: function (response) {
@@ -20,7 +20,7 @@ $.ajax({
     contentType: 'application/json',
     dataType: 'json',
     success: function (response) {
-        populatePlanetsList(response.results)
+        //populatePlanetsList(response.results)
     },
     error: function (response) {
         console.log(response)
@@ -45,6 +45,12 @@ for(let div of listTitles){
 
 const characterValue = document.querySelector('.character-input')
 const planetValue = document.querySelector('.planet-input')
+
+characterValue.addEventListener('input', (event) => {
+    console.log('clicked')
+    console.log(event)
+})
+
 
 function addCharacter() {
     if (characterValue.value) {
@@ -130,7 +136,6 @@ function editCharacter(data) {
 function toggleBtn() {
     const actionBtns = document.querySelectorAll('.action-btn')
 
-    console.log('toggle')
     for(let btn of actionBtns) {
         btn.classList.toggle('active-btn')
     }
@@ -148,7 +153,7 @@ function populateCharactersList(data) {
 }
 
 function populatePlanetsList(data) {
-    const planetsList = document.querySelector('.planets-list')
+    const planetsList = document.querySelector('.planet-list')
 
     for (const element of data) {
         const planet = document.createElement('option')

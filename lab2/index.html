@@ -8,45 +8,55 @@
     <meta name="description" content="">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script defer src="assets/js/main.js"></script>
+    <!--<script defer src="assets/js/main.js"></script>-->
+    <script src="assets/js/new.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div class="container">
         <div class="inner-container">
-            <h1>My favorite characters</h1>
-            <form class="form">
-                <input list="characterDatalist" class="character-input"
-                    placeholder="Search for a Star Wars character or add your own">
-                <datalist id="characterDatalist" class="character-datalist">
-                </datalist>
-
-                <input list="planetsList" class="planet-input" placeholder="Search for a planet or add your own">
-                <datalist id="planetsList" class="planets-list">
-                </datalist>
-            </form>
-            <div class="btn-container">
-                <a class="action-btn add-btn active-btn" href="javascript:void(0)">Add</a>
-                <a class="action-btn change-btn" href="javascript:void(0)">Change</a>
-            </div>
-
-            <div class="list-container" >
-                <div>
-                    <span class="list-title">My favorites<i class="fas fa-retweet"></i></span>
+            <div>
+                <h1>My favorite characters</h1>
+                <form class="form">
+                    <input list="characterDatalist" class="character-input"
+                        placeholder="Loading Star Wars characters...">
+                    <datalist id="characterDatalist" class="character-datalist">
+                    </datalist>
+    
+                    <input list="planetDatalist" class="planet-input" placeholder="Loading Star Wars planets...">
+                    <datalist id="planetDatalist" class="planet-datalist">
+                    </datalist>
+                </form>
+                <div class="btn-container">
+                    <a class="action-btn add-btn active-btn" href="javascript:void(0)">Add</a>
+                    <a class="action-btn change-btn" href="javascript:void(0)">Change</a>
                 </div>
-                <div class="list">
-                    <ul class="character-list" id="myList"></ul>
-                </div>  
             </div>
-            <div class="list-container active" >
-                <div>
-                    <span class="list-title">Star Wars favorites<i class="fas fa-retweet"></i></span>
+        </div>
+
+        <div class="inner-container">
+
+            <div>
+                <div class="list-container">
+                    <div>
+                        <span class="list-title">My favorites<i class="fas fa-retweet"></i></span>
+                    </div>
+                    <div class="list">
+                        <ul class="character-list" id="myList"></ul>
+                    </div>  
                 </div>
-                <div class="list">
-                    <ul class="character-list" id="swList"></ul>
-                </div>  
+                <div class="list-container active" >
+                    <div>
+                        <span class="list-title">Star Wars characters<i class="fas fa-retweet"></i></span>
+                    </div>
+                    <div class="list">
+                        <p><i class="fas fa-spinner fa-spin loading"></i>Loading Star Wars characters...</p>
+                        <ul class="character-list" id="swList"></ul>
+                    </div>  
+                </div>
             </div>
+            
         </div>
 
     </div>

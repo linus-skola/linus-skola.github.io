@@ -1,1 +1,0 @@
-* Add click-event to every added list item for changing name/homeworld
