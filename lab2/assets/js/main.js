@@ -231,7 +231,7 @@ function addCharacterToList(obj) {
         characterList.append(listItem)
 
         objPlanet = obj.lastChild.innerText
-        obj.lastChild.innerText = 'Added to My favorite list!'
+        obj.lastChild.innerText = 'Added to My favorites list!'
         setTimeout(() => {obj.lastChild.innerText = objPlanet}, 4000)
     }
 
