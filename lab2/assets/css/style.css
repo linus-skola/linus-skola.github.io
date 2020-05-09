@@ -116,6 +116,11 @@ li > p {
     cursor: pointer;
     word-wrap: break-word;
 }
+
+li > p:hover {
+    color: #c5c5c5;
+}
+
 li > i {
     color: red;
     margin-left: 2em;
@@ -134,14 +139,6 @@ li > p:nth-child(3) {
     display: block;
     padding-left: 1.4em;
     margin: 0;
-}
-
-#swList li > p {
-    cursor: auto;
-}
-
-#swList li > span {
-    cursor: auto;
 }
 
 ::-webkit-scrollbar {

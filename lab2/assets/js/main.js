@@ -2,33 +2,24 @@ window.addEventListener('load', async () => {
     addEventListeners()
 
     const allPeople = await fetchCharacterData('https://swapi.dev/api/people/', true)
-    populateCharacterDatalist(allPeople)
-
     const allPlanets = await fetchPlanetData('https://swapi.dev/api/planets/', true)
-    populatePlanetDatalist(allPlanets)
 
+    populateCharacterDatalist(allPeople)
+    populatePlanetDatalist(allPlanets)
     createCharacterObjAndPopulate(allPeople)
 })
 
-
 function addEventListeners() {
     const addBtn = document.querySelector('.add-btn')
-    addBtn.addEventListener('click', addCharacter)
-
-
-    document.addEventListener('keydown', function (event) {
-        if (event.keyCode == 13) {
-            addCharacter()
-        }
+    addBtn.addEventListener('click', () => {
+        addCharacterToList()
     })
-
 
     const listTitles = document.querySelectorAll('.list-title')
     for (let div of listTitles) {
         div.addEventListener('click', toggleList)
     }
-
-    
+  
     const changeBtn = document.querySelector('.change-btn')
     changeBtn.addEventListener('click', () => {
         editCharacter(c)
@@ -40,7 +31,6 @@ function toggleList() {
     for (let div of listSections) {
         div.classList.toggle('active')
     }
-
 }
 
 function toggleBtn() {
@@ -116,9 +106,6 @@ async function fetchCharacterData(url, all) {
         const json = await response.json();
         return json.name
     }
-
-
-
 }
 
 async function fetchPlanetData(url, all) {
@@ -152,7 +139,6 @@ async function fetchPlanetData(url, all) {
         const json = await response.json();
         return json.name
     }
-
 }
 
 function populateSWList(data) {
@@ -171,9 +157,12 @@ function populateSWList(data) {
         const span = document.createElement('span')
         span.innerText = element.homeworld
 
-
         listItem.append(p)
         listItem.append(span)
+
+        listItem.addEventListener('click', () => {
+            addCharacterToList(listItem)
+        })
 
         loadingMsg.parentElement.remove()
         characterList.append(listItem)
@@ -213,7 +202,6 @@ function populatePlanetDatalist(data) {
 async function createCharacterObjAndPopulate(data) {
     allObj = []
 
-
     for (const character of data) {
         let obj = {
             name: character.name,
@@ -221,17 +209,33 @@ async function createCharacterObjAndPopulate(data) {
         }
         allObj.push(obj)
     }
-
     populateSWList(allObj)
 }
 
-function addCharacter() {
+function addCharacterToList(obj) {
     const characterValue = document.querySelector('.character-input')
     const planetValue = document.querySelector('.planet-input')
+    const characterList = document.querySelector('#myList')
 
-    if (characterValue.value) {
-        const characterList = document.querySelector('#myList')
+    if(obj) {
+        const listItem = obj.cloneNode(true)
+        const icon = document.createElement('i')
+        icon.className = 'fas fa-times-circle'
 
+        icon.addEventListener('click', () => {
+            icon.parentElement.remove()
+        })
+
+        const lastChild = listItem.lastChild
+        listItem.insertBefore(icon, lastChild)
+        characterList.append(listItem)
+
+        objPlanet = obj.lastChild.innerText
+        obj.lastChild.innerText = 'Added to My favorite list!'
+        setTimeout(() => {obj.lastChild.innerText = objPlanet}, 4000)
+    }
+
+    else if (characterValue.value) {
         const listItem = document.createElement('li')
 
         //Character name
@@ -249,7 +253,6 @@ function addCharacter() {
         icon.addEventListener('click', () => {
             icon.parentElement.remove()
         })
-
 
         //Planet
         const span = document.createElement('span')
