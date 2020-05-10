@@ -4,9 +4,10 @@ window.addEventListener('load', async () => {
     const allPeople = await fetchCharacterData('https://swapi.dev/api/people/', true)
     const allPlanets = await fetchPlanetData('https://swapi.dev/api/planets/', true)
 
+    createCharacterObjAndPopulate(allPeople)
     populateCharacterDatalist(allPeople)
     populatePlanetDatalist(allPlanets)
-    createCharacterObjAndPopulate(allPeople)
+    
 })
 
 function addEventListeners() {
@@ -26,10 +27,23 @@ function addEventListeners() {
     })
 }
 
-function toggleList() {
+function toggleList(list) {
     const listSections = document.querySelectorAll('.list-container')
-    for (let div of listSections) {
-        div.classList.toggle('active')
+
+    if(typeof(list) === 'string') {
+        for(let element of listSections){
+            if(element.id === list){
+                element.classList.add('active')
+            }
+            else {
+                element.classList.remove('active')
+            }
+        }
+    }
+    else {
+        for (let div of listSections) {
+            div.classList.toggle('active')
+        }
     }
 }
 
@@ -267,6 +281,8 @@ function addCharacterToList(obj) {
         listItem.append(span)
 
         characterList.append(listItem)
+
+        toggleList('my')
 
         characterValue.value = ''
         planetValue.value = ''
