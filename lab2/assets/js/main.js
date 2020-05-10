@@ -7,7 +7,7 @@ window.addEventListener('load', async () => {
     createCharacterObjAndPopulate(allPeople)
     populateCharacterDatalist(allPeople)
     populatePlanetDatalist(allPlanets)
-    
+
 })
 
 function addEventListeners() {
@@ -20,7 +20,7 @@ function addEventListeners() {
     for (let div of listTitles) {
         div.addEventListener('click', toggleList)
     }
-  
+
     const changeBtn = document.querySelector('.change-btn')
     changeBtn.addEventListener('click', () => {
         editCharacter(c)
@@ -30,9 +30,9 @@ function addEventListeners() {
 function toggleList(list) {
     const listSections = document.querySelectorAll('.list-container')
 
-    if(typeof(list) === 'string') {
-        for(let element of listSections){
-            if(element.id === list){
+    if (typeof (list) === 'string') {
+        for (let element of listSections) {
+            if (element.id === list) {
                 element.classList.add('active')
             }
             else {
@@ -59,7 +59,7 @@ let c = null
 function setInputValues(data) {
     const characterValue = document.querySelector('.character-input')
     const planetValue = document.querySelector('.planet-input')
-    
+
     c = data
     let name = data.querySelector('p')
     let planet = data.querySelector('span')
@@ -73,7 +73,7 @@ function setInputValues(data) {
 function editCharacter(data) {
     const characterValue = document.querySelector('.character-input')
     const planetValue = document.querySelector('.planet-input')
-    
+
     let name = data.querySelector('p')
     let planet = data.querySelector('span')
 
@@ -230,61 +230,83 @@ function addCharacterToList(obj) {
     const characterValue = document.querySelector('.character-input')
     const planetValue = document.querySelector('.planet-input')
     const characterList = document.querySelector('#myList')
+    const errorMsg = document.querySelector('.error')
+    errorMsg.innerText = null
 
-    if(obj) {
-        const listItem = obj.cloneNode(true)
-        const icon = document.createElement('i')
-        icon.className = 'fas fa-times-circle'
-
-        icon.addEventListener('click', () => {
-            icon.parentElement.remove()
-        })
-
-        const lastChild = listItem.lastChild
-        listItem.insertBefore(icon, lastChild)
-        characterList.append(listItem)
-
-        objPlanet = obj.lastChild.innerText
-        obj.lastChild.innerText = 'Added to My favorites list!'
-        setTimeout(() => {obj.lastChild.innerText = objPlanet}, 4000)
+    if(!preventDuplicate(characterValue.value)) {
+        if (obj) {
+            const listItem = obj.cloneNode(true)
+            const icon = document.createElement('i')
+            icon.className = 'fas fa-times-circle'
+    
+            icon.addEventListener('click', () => {
+                icon.parentElement.remove()
+            })
+    
+            const lastChild = listItem.lastChild
+            listItem.insertBefore(icon, lastChild)
+            characterList.append(listItem)
+    
+            objPlanet = obj.lastChild.innerText
+            obj.lastChild.innerText = 'Added to My favorites list!'
+            setTimeout(() => { obj.lastChild.innerText = objPlanet }, 4000)
+        }
+    
+        else if (characterValue.value) {
+            const listItem = document.createElement('li')
+    
+            //Character name
+            const p = document.createElement('p')
+            p.innerText = characterValue.value
+    
+            p.addEventListener('click', () => {
+                setInputValues(p.parentElement)
+            })
+    
+            // ICON
+            const icon = document.createElement('i')
+            icon.className = 'fas fa-times-circle'
+    
+            icon.addEventListener('click', () => {
+                icon.parentElement.remove()
+            })
+    
+            //Planet
+            const span = document.createElement('span')
+            span.innerText = planetValue.value
+    
+            span.addEventListener('click', () => {
+                setInputValues(span.parentElement)
+            })
+    
+            listItem.append(p)
+            listItem.append(icon)
+            listItem.append(span)
+    
+            characterList.append(listItem)
+    
+            toggleList('my')
+    
+            characterValue.value = ''
+            planetValue.value = ''
+        }
     }
+    else{
+        errorMsg.innerText = 'Character already exists in list!'
+    }
+    
+}
 
-    else if (characterValue.value) {
-        const listItem = document.createElement('li')
+function preventDuplicate(character) {
+    const list = document.querySelector('#myList')
+    const listItems = list.querySelectorAll('li')
 
-        //Character name
-        const p = document.createElement('p')
-        p.innerText = characterValue.value
-
-        p.addEventListener('click', () => {
-            setInputValues(p.parentElement)
-        })
-
-        // ICON
-        const icon = document.createElement('i')
-        icon.className = 'fas fa-times-circle'
-
-        icon.addEventListener('click', () => {
-            icon.parentElement.remove()
-        })
-
-        //Planet
-        const span = document.createElement('span')
-        span.innerText = planetValue.value
-
-        span.addEventListener('click', () => {
-            setInputValues(span.parentElement)
-        })
-
-        listItem.append(p)
-        listItem.append(icon)
-        listItem.append(span)
-
-        characterList.append(listItem)
-
-        toggleList('my')
-
-        characterValue.value = ''
-        planetValue.value = ''
+    for (const item of listItems) {
+        if (item.querySelector('p').innerText === character) {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }
