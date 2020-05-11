@@ -34,16 +34,19 @@ body {
 
 .search-btn {
     padding: 1em;
-    color: white;
+    color: #3a3a3a;
     font-size: 0.6em;
+    font-weight: 500;
     margin: 0;
-    background-color: #008d13;
+    background-color: #F9F21E;
     border-radius: 0 10px 10px 0;
     text-decoration: none;
+    
 }
 
 .search-btn:hover {
-    background-color: #008311;
+    background-color: rgb(243, 236, 31);
+    transition: 0.4s;
 }
 
 .sun-data {
