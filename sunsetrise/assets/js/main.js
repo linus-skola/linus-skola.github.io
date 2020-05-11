@@ -11,7 +11,7 @@ searchBtn.addEventListener('click', () => {
 
 })
 
-autocomplete.addEventListener('place_changed', () => {
+autocomplete.addListener('place_changed', () => {
     if (searchInput.value) {
         const lat = autocomplete.getPlace().geometry.location.lat()
         const lng = autocomplete.getPlace().geometry.location.lng()
