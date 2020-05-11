@@ -12,7 +12,7 @@ searchBtn.addEventListener('click', () => {
 })
 
 async function fetchSunData(lat, lng) {
-    const url = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng
+    const url = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&formatted=0'
 
     const options = {
         method: 'GET'
@@ -23,11 +23,20 @@ async function fetchSunData(lat, lng) {
 
     const sunDiv = document.querySelector('.sun-data')
     const title = document.querySelector('.sun-title')
-    const sunrise = document.querySelector('.sunrise')
-    const sunset = document.querySelector('.sunset')
+    const sunriseElement = document.querySelector('.sunrise')
+    const sunsetElement = document.querySelector('.sunset')
+
+    let sunrise = new Date(json.results.sunrise)
+    let sunset = new Date(json.results.sunset)
 
     title.innerText = 'Today in ' + searchInput.value
-    sunrise.innerText = json.results.sunrise
-    sunset.innerText = json.results.sunset
+    sunriseElement.innerText = sunrise.toLocaleTimeString('sv-SE')
+    sunsetElement.innerText = sunset.toLocaleTimeString('sv-SE')
     sunDiv.style.display = 'block'
 }
+
+
+Date.prototype.addHours = function(h) {
+    this.setTime(this.getTime() + (h*60*60*1000));
+    return this;
+  }
