@@ -11,6 +11,16 @@ searchBtn.addEventListener('click', () => {
 
 })
 
+document.addEventListener('keypress', (event) => {
+    if(event.keyCode === 13) {
+        if (searchInput.value) {
+            const lat = autocomplete.getPlace().geometry.location.lat()
+            const lng = autocomplete.getPlace().geometry.location.lng()
+            fetchSunData(lat, lng)
+        }
+    }
+})
+
 async function fetchSunData(lat, lng) {
     const url = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&formatted=0'
 
