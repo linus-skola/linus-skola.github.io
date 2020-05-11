@@ -11,13 +11,11 @@ searchBtn.addEventListener('click', () => {
 
 })
 
-document.addEventListener('keypress', (event) => {
-    if(event.keyCode === 13) {
-        if (searchInput.value) {
-            const lat = autocomplete.getPlace().geometry.location.lat()
-            const lng = autocomplete.getPlace().geometry.location.lng()
-            fetchSunData(lat, lng)
-        }
+autocomplete.addEventListener('place_changed', () => {
+    if (searchInput.value) {
+        const lat = autocomplete.getPlace().geometry.location.lat()
+        const lng = autocomplete.getPlace().geometry.location.lng()
+        fetchSunData(lat, lng)
     }
 })
 
@@ -46,7 +44,7 @@ async function fetchSunData(lat, lng) {
 }
 
 
-Date.prototype.addHours = function(h) {
-    this.setTime(this.getTime() + (h*60*60*1000));
+Date.prototype.addHours = function (h) {
+    this.setTime(this.getTime() + (h * 60 * 60 * 1000));
     return this;
-  }
+}
